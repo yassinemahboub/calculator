@@ -34,12 +34,14 @@ color: inherit;
     column-gap: 10px;
     width: 100%;
     margin: 0;
+    
 }
 
 .top-bar p, 
 .top-bar i {
     color: #072719;
     font-size: 14px;
+    animation: fade-in-from-left 0.5s;
 }
 
 /* HEADER ELEMENTS */
@@ -51,6 +53,7 @@ header {
     align-items: center;
     margin-top: 50px;
     margin-bottom: 30px;
+    animation: fade-in-from-top 0.5s;
 }
 
 .badge {
@@ -139,6 +142,8 @@ h1 {
     overflow: hidden;
     border-radius: 10px;
     border: 2px solid rgb(209, 223, 236);
+    animation: fade-in-from-left 0.5s;
+
     
 }
 
@@ -205,6 +210,8 @@ footer {
     line-height: 160%;
     margin-top: auto;
     margin-bottom: 10px;
+    animation: fade-in-from-top 0.5s;
+
 }
 
 footer i {
@@ -255,3 +262,27 @@ header {
     margin-top: 80px;
 }
 }
+
+ /* ANIMATIONS */ 
+
+ @keyframes fade-in-from-top {
+    0% {
+        opacity: 0%;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+ }
+
+ @keyframes fade-in-from-left {
+    0% {
+        opacity: 0%;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+ }
