@@ -52,7 +52,7 @@ header {
     align-items: center;
     column-gap: 10px;
     border-radius: 30px;
-    border: 1px solid #20E7A8;
+    border: 1px solid rgb(32, 231, 168);
     padding: 8px 12px;
 }
 
@@ -118,6 +118,59 @@ h1 {
     z-index: -5;
 
 }
+
+/* CALCULATOR */
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(189, 255, 227, 0.75);
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(111, 255, 207, 0.75);
+
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+   grid-column: 1 / -1; 
+   background-color: rgb(3, 31, 19, 0.7);
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-around;
+   flex-direction: column;
+   padding: 15px;
+   word-wrap: break-word;
+   word-break: break-all;
+}
+
+.output .previous-operand {
+color: rgba(255, 255, 255, 0.75);
+font-size: 20px;
+}
+
+.output .current-operand {
+    color: rgb(20, 255, 181);
+    font-size: 25px;
+    font-weight: 600;
+    }
 
 /* FOOTER */ 
 
