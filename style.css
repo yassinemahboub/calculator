@@ -14,6 +14,9 @@ body {
     color: white;
     height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -29,6 +32,8 @@ color: inherit;
     justify-content: center;
     align-items: center;
     column-gap: 10px;
+    width: 100%;
+    margin: 0;
 }
 
 .top-bar p, 
@@ -45,6 +50,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .badge {
@@ -79,7 +85,7 @@ h1 {
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -1.8px;
-    margin: 30px 0 0px 0;
+    margin: 20px 0 0px 0;
 }
 
 .subheader {
@@ -104,6 +110,8 @@ h1 {
     height: 333px;
     position: absolute;
     z-index: -5;
+    left: 0;
+    top: 50%;
 }
 
 .right-blur {
@@ -115,6 +123,7 @@ h1 {
     height: 333px;
     position: absolute;
     right: 0;
+    top: 50%;
     z-index: -5;
 
 }
@@ -126,13 +135,16 @@ h1 {
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 80px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 60px);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid rgb(209, 223, 236);
     
 }
 
 .calculator-grid > button {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: 1px solid white;
     outline: none;
     background-color: rgba(189, 255, 227, 0.75);
@@ -163,14 +175,19 @@ h1 {
 
 .output .previous-operand {
 color: rgba(255, 255, 255, 0.75);
-font-size: 20px;
+font-size: 25px;
 }
 
 .output .current-operand {
     color: rgb(20, 255, 181);
-    font-size: 25px;
+    font-size: 32px;
     font-weight: 600;
     }
+
+.calculator-border {
+    overflow: hidden;
+    border-radius: 10px;
+}
 
 /* FOOTER */ 
 
@@ -186,6 +203,8 @@ footer {
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 
 footer i {
@@ -194,4 +213,45 @@ transition: all 0.2s;
 
 footer i:hover {
 color: #20E7A8;
+}
+
+/* RESPONSIVENESS */ 
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 45px;
+    }
+    .subheader {
+        font-size: 16px;
+        text-align: center;
+        word-wrap: break-word;
+        width: 90%;
+        
+    }
+
+    .badge p, 
+    .badge span {
+        font-size: 14px;
+    }
+    .top-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 430px) {
+ h1 {
+    font-size: 35px;
+ }
+
+ .badge p, 
+    .badge span {
+        font-size: 14px;
+    }
+    .subheader {
+        display: none;
+    }
+header {
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
 }
